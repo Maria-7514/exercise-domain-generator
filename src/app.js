@@ -7,22 +7,35 @@ import "./assets/img/4geeks.ico";
 
 window.onload = function() {
   //write your code here
-  console.log("Any string");
+
+  let pronoun = ["the", "our"];
+  let adj = ["great", "big"];
+  let noun = ["jogger", "racoon"];
+  let domain = [".com", ".net", ".us", ".io", ".go.cr"];
+
+  function domainGenerator(pronoun, adj, noun) {
+    for (
+      let pronounElement = 0;
+      pronounElement < pronoun.length;
+      pronounElement++
+    ) {
+      for (let adjElement = 0; adjElement < adj.length; adjElement++) {
+        for (let nounElement = 0; nounElement < noun.length; nounElement++) {
+          for (
+            let domainElement = 0;
+            domainElement < domain.length;
+            domainElement++
+          ) {
+            console.log(
+              pronoun[pronounElement] +
+                adj[adjElement] +
+                noun[nounElement] +
+                domain[domainElement]
+            );
+          }
+        }
+      }
+    }
+  }
+  domainGenerator(pronoun, adj, noun, domain);
 };
-let pronoun = ["the", "our"];
-let adj = ["great", "big"];
-let noun = ["jogger", "racoon"];
-let domain = [".com", ".net", ".us", ".io", ".go.cr"];
-
-let elementa = Math.floor(Math.random() * pronoun.length);
-let elementb = Math.floor(Math.random() * adj.length);
-let elementc = Math.floor(Math.random() * noun.length);
-let elementd = Math.floor(Math.random() * domain.length);
-
-let cambioa = pronoun[elementa];
-let cambiob = adj[elementb];
-let cambioc = noun[elementc];
-let cambiod = domain[elementd];
-
-let change = document.getElementById("Domain");
-change.innerHTML = cambioa + "" + cambiob + cambioc + "" + cambiod;
